@@ -1,23 +1,213 @@
-html,
 body {
-    margin: 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 30px 20px;
+            min-height: 100vh;
+        }
 
-}
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+        }
 
-main {
-    display: flex;
-    height: 100vh;
-}
+        #list {
+            background: linear-gradient(145deg, #ffffff, #f8f9fa);
+            border: 1px solid #e3e6f0;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 20px 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
 
-#list {
+        #list::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #4e73df, #36b9cc);
+        }
 
-    flex: 2;
-    background-color: rgb(181, 181, 223);
-}
+        #list h3 {
+            color: #2c3e50;
+            margin-bottom: 25px;
+            font-weight: 600;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-#form {
-    flex: 1;
-    background-color: rgb(202, 183, 183);
-    padding: 10px, 20px;
+        #list h3::before {
+            content: "📋";
+            font-size: 1.3em;
+        }
 
-}
+        #form {
+            background: linear-gradient(145deg, #ffffff, #f8f9fa);
+            border: 1px solid #e3e6f0;
+            border-radius: 12px;
+            padding: 35px;
+            margin: 20px 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        #form::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #1cc88a, #36b9cc);
+        }
+
+        #form h3 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-weight: 600;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        #form h3::before {
+            content: "✏️";
+            font-size: 1.3em;
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: #34495e;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-control, .form-select {
+            border-radius: 8px;
+            border: 2px solid #e3e6f0;
+            padding: 12px 16px;
+            transition: all 0.3s ease;
+            background: #fff;
+            font-size: 1rem;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: #4e73df;
+            box-shadow: 0 0 0 3px rgba(78, 115, 223, 0.1);
+            background: #ffffff;
+        }
+
+        .form-control-color {
+            height: 50px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .btn {
+            border-radius: 8px;
+            padding: 12px 24px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 0.9rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #4e73df, #224abe);
+            color: white;
+            box-shadow: 0 4px 15px rgba(78, 115, 223, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #375a7f, #1e3a8a);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(78, 115, 223, 0.4);
+        }
+
+        .btn-dark {
+            background: linear-gradient(135deg, #5a5c69, #3a3b45);
+            color: white;
+            box-shadow: 0 4px 15px rgba(90, 92, 105, 0.3);
+        }
+
+        .btn-dark:hover {
+            background: linear-gradient(135deg, #484954, #2e2f35);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(90, 92, 105, 0.4);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .mt-3 {
+            margin-top: 1.5rem !important;
+        }
+
+        /* Add subtle animations */
+        #list, #form {
+            animation: slideUp 0.6s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Input group styling for better organization */
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 15px;
+            }
+            
+            #list, #form {
+                padding: 25px 20px;
+                margin: 15px 0;
+            }
+
+            #list h3, #form h3 {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Professional focus indicators */
+        .form-control:focus {
+            outline: none;
+        }
+
+        .btn:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(78, 115, 223, 0.25);
+        }
